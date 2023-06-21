@@ -24,6 +24,7 @@ Um breve vídeo de demonstração do resultado do projeto foi feito e hospedado 
     * Título;
     * Descrição;
     * Lance inicial.
+      
     Deve ser opcional ao usuário fornecer:
     * Url para a imagem do leilão;
     * Categoria (ex. Moda, Brinquedo, Eletrônico, Casa, etc.).
