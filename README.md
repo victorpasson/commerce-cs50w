@@ -20,22 +20,29 @@ Um breve vídeo de demonstração do resultado do projeto foi feito e hospedado 
     * Um para os comentários feitos nos leilões.
     Você é livre para escolher quais campora cada modelo deve ter e os tipos desses campos. Para você é habilitado criar quaisquer modelos adicionais que desejar.
 
-2. **Criar Leilão** - aos usuários deve ser possível visitar uma página para a criação de um novo leilão. Eles devem especificar 
+2. **Criar Leilão** - aos usuários deve ser possível visitar uma página para a criação de um novo leilão. Na criação deve especificar obrigatoriamente:
+    * Título;
+    * Descrição;
+    * Lance inicial.
+    Deve ser opcional ao usuário fornecer:
+    * Url para a imagem do leilão;
+    * Categoria (ex. Moda, Brinquedo, Eletrônico, Casa, etc.).
     
-3. **Pesquisa** - permita que o usuário escreva uma entrada de pesquisa para as páginas da enciclopédia.
-    * Se a entrada corresponder ao nome de uma entrada da enciclopédia, o usuário deve ser redirecionado para aquela página; 
-    * Se não corresponder ao nome de nenhuma entrada, o usuário deve ser redirecionado para uma página que exibe uma lista de todas páginas que possuem aquela palavra como substring. Por exemplo, se a pesquisa do usuário for *ython*, então *Python* deve aparecer no resultado da pesquisa;
-    * Clicando no nome de qualquer um desses resultados de pesquisa, o usuário deve ser redirecionado para a página da enciclopédia daquele resultado.
+3. **Página dos Leilões Ativos** - a rota padrão da sua aplicação deve exibir ao usuário uma lista de todos os leilões correntemente ativos. Para cada leilão ativo, a página deve exibir (no mínimo): 
+    * Título;
+    * Descrição;
+    * Lance corrent;
+    * Foto (se existir alguma).
 
-4. **Nova Página** - clicando em "*Create New Page*” o usuário deve ser redirecionado para uma página onde pode criar uma nova página da enciclopédia.
-    * Deve ser habilitado ao usuário: a) inserir um título para a página; b) inserir textos em Markdown, em uma *textarea*,  para o conteúdo da página;
-    * Deve haver um botão para salvar as informações;
-    * Quando a página é salva, se a entrada da enciclopédia já existir para aquele título, deve ser apresentado uma mensagem de erro ao usuário;
-    * Caso contrário, a nova página será salva no diretório e o usuário será redirecionado a página criada.
+4. **Página do Leilão** - clicando em um leilão o usuário deve ser redirecionado para a página específica daquele anúncio. Nessa página, o usuário deve ver todo o detalhe sobre o leilão.
+    * Se o usuário estiver logado, deve ser habilitado a ele adicionar o item em sua *Lista de Desejos*. Se o item já estiver na sua lista, deve ser possível remover dela;
+    * Se o usuário estiver logado, deve ser habilitado a ele dar um lance no item. O lance deve ser pelo menos maior do que o lance inicial e maior do que qualquer outro lance que foi dado (se tiver algum). Se nenhuma dessas condições forem satisfeitas, ao usuário deve ser apresentada uma mensagem de erro;
+    * Se o usuário estiver logado e for quem criou o leilão, deve ser possível fechar o leilão a partir dessa página, o que torna o usuário do lance mais alto o vencedor do leilão e torna o leilão inativo;
+    * Se o usuário estiver logado e na página de um leilão fechado e for ele o ganhador do leilão, a página deve informar isso para ele;
+    * Usuários que estiverem logado devem ser habilitados para adicionar comentários à página do leilão. A página do leilão deve exibir todos os comentários feitos nele.
 
-5. **Editar Página** - Em cada página de resultado deve ser habilitado ao usuário clicar em um link que o leva para uma página onde pode editar o conteúdo Markdown daquela página em específico. Essa edição deve ser feita em uma *textarea*.
-    * A *textarea* deve ser pré-preenchida com o conteúdo já existente para aquela página (isto é, o valor inicial de value já deve conter o conteúdo daquela página na *textarea*);
-    * Ao usuário deve ser disponibilizado um botão para salvar as mudanças feitas;
-    * Assim que salvar, o usuário deve ser redirecionado para a página modificada.
+5. **Lista de Desejos** - usuários logados devem ser habilitados a visitar uma página de *Desejos*, o que deve exibir ao usuário todos os leilões que o usuário adicionou em seus *Lista de Desejos*.
 
-6. **Página Aleatória** - clicando em “*Random Page*” o usuário deve ser levado para uma entrada aleatória da enciclopédia.
+6. **Categorias** - aos visitantes (logados ou não) deve ser possível visitar uma página que exibe todas as categorias dos leilões. Clicando em qualquer categoria, o usuário deve ser levado para uma página que exibe todos os leilões ativos naquela categoria específica.
+
+7. **Django Admin Interface** - através do Django Admin Interface, ao administrador do site deve ser habilitado ver, adicionar, editar e deletar qualquer leilão, comentário e lance feito no site.
