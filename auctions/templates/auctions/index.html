@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>{{ title }}</h2>
+    <div id="index-content">
+        <div class="grid-content">
+            {% for auction in auctions %}
+                <div class="grid-item {% if auction.win %}inative{% endif %}">
+                    <a href="{% url 'auction' auction.id %}">
+                        <div class="active-list">
+                            <h3 class="text-truncate">{{ auction.title }}</h3>
+                            {% if auction.image %}
+                                <img src="{{ auction.image }}" alt="{{ auction.title }}">
+                            {% else %}
+                                <img src="https://images.assetsdelivery.com/compings_v2/yehorlisnyi/yehorlisnyi2104/yehorlisnyi210400016.jpg" alt="{{ auction.title }}">
+                            {% endif %}
+                            <div class="lance">
+                                <span class="lance-title">Actual Bid $</span>
+                                <span class="price">
+                                    <strong>
+                                        {% if auction.bids.all %}
+                                            {{ auction.bids.last.bid }}
+                                        {% else %}
+                                            {{ auction.initial_bid }}
+                                        {% endif %}
+                                    </strong>
+                                </span>
+                            </div>
+                            <p class="crop-text-2">{{ auction.description }}</p>
+                            <span><strong>Created:</strong> {{ auction.created }}</span><br>
+                            <span><strong>Announcer:</strong> {{ auction.user.first_name }}</span>
+                        </div>
+                        {% if auction.win %}
+                                <span class="inative-box"><strong>INATIVE</strong>
+                                     <br> WINNER: {{ auction.win.first_name }}</span>
+
+                        {% endif %}
+                    </a>
+                </div>
+            {% empty %}
+                No Auction.
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
