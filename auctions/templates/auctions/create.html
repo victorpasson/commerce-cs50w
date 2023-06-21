@@ -1,0 +1,11 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}Create Auction{% endblock %}
+{% block body %}
+<h2 class="text-center">Create Auction</h2>
+<form class="form-group col-md-7 mx-auto" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary btn-block btn-lg" type="submit" value="Create Auction">
+</form>
+{% endblock %}
