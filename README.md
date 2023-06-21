@@ -1,8 +1,8 @@
 # CS50W - Project 2 - Commerce
 
-Repositório que contém o código para a solução do terceiro projeto do curso CS50W - Web Programming. O objetivo principal é permitir que os usuários se registrem, façam login, criem anúncios, fechem anúncios, favoritem os anúncios e façam comentários. A aplicação foi construída com o Django framework.
+Repositório que contém o código para a solução do terceiro projeto do curso CS50W - Web Programming. O objetivo principal do projeto é permitir que os usuários se registrem, façam login, criem anúncios, fechem anúncios, adicionem anúncios aos favoritos e façam comentários. A aplicação foi construída com o Django framework.
 
-[![Page Wiki Project](https://i.ibb.co/mRK3RVg/Opera-Instant-neo-2023-06-21-153740-vtpasson-pythonanywhere-com.png)](www.youtube.com/watch?v=u0peDMCmqAE&t)
+[![Page Wiki Project](https://i.ibb.co/mRK3RVg/Opera-Instant-neo-2023-06-21-153740-vtpasson-pythonanywhere-com.png)](https://youtu.be/W340OK9DEQ8)
 
 ## Página do Projeto
 
@@ -10,7 +10,7 @@ O projeto foi disponibilizado para interação por meio do [Python Any Where](ht
 
 ## Youtube Vídeo
 
-Um breve vídeo de demonstração do resultado do projeto foi feito e hospedado no [YouTube](https://www.youtube.com/watch?v=u0peDMCmqAE&t).
+Um breve vídeo de demonstração do resultado do projeto foi feito e hospedado no [YouTube](https://youtu.be/W340OK9DEQ8).
 
 ## Especificações do projeto
 
